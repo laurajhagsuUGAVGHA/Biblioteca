@@ -1,42 +1,58 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Cadastro de livros</h1>
-  <input id="nomeLivro" placeholder="Nome" type="text">
-  <input id="autorLivro" placeholder="Autor" type="text">
-  <input id="anoLivro" placeholder="Ano" type="number">
-  <button onclick="adicionar()">Adicionar Livro</button>
-  <button onclick="mostrarLivros()">Mostrar</button>
-  <script>
-
-
-let biblioteca = [];
+    <div class="container">
+        <h1>Cadastro de livros</h1>
+        <input id="nomeLivro" placeholder="Nome" type="text">
+        <input id="autorLivro" placeholder="Autor" type="text">
+        <input id="anoLivro" placeholder="Ano" type="number">
+        <button onclick="adicionar()">Adicionar Livro</button>
+        <button onclick="mostrarLivros()">Mostrar</button>
+      
+                <ul id="listaLivros"></ul>
+    </div>
   
-function cadastro(nome, autor, ano) {
-    var livro = {
-        titulo: nome,
-        autor: autor,
-        ano: ano
+    
+    <script>
+        let biblioteca = [];
 
-    };
-    biblioteca.push(livros)
- 
-}
+        function cadastro(nome, autor, ano) {
+            var livro = {
+                titulo: nome,
+                autor: autor,
+                ano: ano
+            };
+            biblioteca.push(livro);
+        }
 
-function adicionar() {
-    let nome = document.getElementById('nomeLivro').value;
-    let autor = document.getElementById('autorLivro').value;
-    let ano = document.getElementById('anoLivro').value;
-    cadastro(nome, autor, ano);
-}
-function mostrarLivros() {
-    alert.log(`resultado:${biblioteca[0].titulo}`);
-}
-  </script>
+        function adicionar() {
+            let nome = document.getElementById('nomeLivro').value;
+            let autor = document.getElementById('autorLivro').value;
+            let ano = document.getElementById('anoLivro').value;
+            cadastro(nome, autor, ano);
+        }
+
+        function mostrarLivros() {
+            let listaLivros = document.getElementById('listaLivros');
+            listaLivros.innerHTML = ''; // Limpa a lista antes de mostrar os livros
+
+            for (let i = 0; i < biblioteca.length; i++) {
+                let livro = biblioteca[i];
+                let listItem = document.createElement('li');
+                listItem.textContent = `Título: ${livro.titulo}, Autor: ${livro.autor}, Ano: ${livro.ano}`;
+                listaLivros.appendChild(listItem);
+            }
+        }
+
+
+
+        
+    </script>
 </body>
 </html>

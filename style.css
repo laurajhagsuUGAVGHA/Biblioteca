@@ -5,19 +5,19 @@ body, h1, input, button {
 }
 
 body {
-    background-color: beige;
+    background-color:#baebf7;
     padding: 20px;
      }
 
 .container {
     max-width: 600px;
-    height: 300px;
+    height: 400px;
     margin: 0 auto;
     padding: 20px;
     background-color: #a5ecfe;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 200px;
+    /* margin-top: 200px; */
     text-align: center;
     align-items: center;
 }
@@ -49,5 +49,22 @@ button {
 }
 
 button:hover {
-    background-color: #4119e3;
+    background-color: #fca2be;
 }
+
+
+#carroselImagem{
+    width: 170px;
+    height: 170px;
+    margin-top: 50px;
+}
+
+.carrosel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

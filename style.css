@@ -65,7 +65,7 @@ button:hover {
     width: 100%;
    /* display: inline-block;
    border-radius: 50%;*/
-   animation: rodar 5s;
+   animation: rodar 30s;
    transition-duration: 2s;
 }
 @keyframes rodar {
